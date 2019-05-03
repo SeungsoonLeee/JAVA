@@ -1,0 +1,57 @@
+public class SSMain {
+	public static int game(int me, int you) {
+		//1.가위   2.바위   3.보
+		if(me == you)	return 0;
+		else {
+			if(you - me == 1 || you - me == -2)	return -1;
+			else	return 1;
+		}
+	}
+	
+	public static void main(String[] args) {
+		ServerSocket ss = null;
+		int win = 0;
+		int loose = 0;
+		int draw = 0;
+		try {
+			//192.168.0.84
+			ss = new ServerSocket(7878);
+			System.out.println("접속 대기중");
+			Socket s = ss.accept();
+			System.out.println("접속됨");
+			
+			InputStream is = s.getInputStream();
+			InputStreamReader isr = new InputStreamReader(is);
+			BufferedReader br = new BufferedReader(isr);
+			
+			OutputStream os = s.getOutputStream();
+			OutputStreamWriter osw = new OutputStreamWriter(os);
+			BufferedWriter bw = new BufferedWriter(osw);
+			
+			Scanner sc = new Scanner(System.in);
+			String myMsg = null;
+			String yourMsg = null;
+			while(true) {
+				yourMsg = br.readLine();
+				System.out.println(yourMsg);
+				myMsg = sc.next();
+				bw.write(myMsg + "\r\n");
+				bw.flush();
+				try {
+					if(game(Integer.parseInt(myMsg), Integer.parseInt(yourMsg)) == 1)	win++;
+					else if(game(Integer.parseInt(myMsg), Integer.parseInt(yourMsg)) == 0)	draw++;
+					else loose++;
+				} catch (Exception e) {
+					System.out.println("똑바로 내야지!");
+				}
+				System.out.printf("현재 %d승 %d무 %d패\n", win, draw, loose);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {ss.close();} catch (Exception e) {}
+		}
+		
+	}
+}
