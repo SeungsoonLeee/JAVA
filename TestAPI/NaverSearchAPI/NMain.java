@@ -10,8 +10,6 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class NMain {
 	public static void main(String[] args) {
-		// X-Naver-Client-Id = hq9h9FZ9BzmGN2YhhjYa
-		// X-Naver-Client-Secret = YqVXedDtL2
 		String str = null;
 		Scanner sc = new Scanner(System.in);
 
@@ -25,8 +23,8 @@ public class NMain {
 
 			URL u = new URL(url);
 			HttpsURLConnection hsuc = (HttpsURLConnection) u.openConnection();
-			hsuc.setRequestProperty("X-Naver-Client-Id", "hq9h9FZ9BzmGN2YhhjYa");
-			hsuc.setRequestProperty("X-Naver-Client-Secret", "YqVXedDtL2");
+			hsuc.setRequestProperty("X-Naver-Client-Id", "kkkkkkkkkkkkkk");
+			hsuc.setRequestProperty("X-Naver-Client-Secret", "kkkkkkkkk");
 			
 			InputStream is = hsuc.getInputStream();
 			InputStreamReader isr = new InputStreamReader(is);
