@@ -17,20 +17,18 @@ import loc.Loc;
 public class KMain {
 
 	public static void main(String[] args) {
-		// X-Naver-Client-Id = hq9h9FZ9BzmGN2YhhjYa
-		// X-Naver-Client-Secret = YqVXedDtL2
 		String str = null;
 		Scanner sc = new Scanner(System.in);
 
 		try {
-			System.out.print("ÁÖÁ¦ : ");
+			System.out.print("ì£¼ì œ : ");
 			str = sc.next();	
 			str = URLEncoder.encode(str, "utf-8");
 			
-			//ÁöÇÏÃ¶¤¡
-			//http://openapi.seoul.go.kr:8088/(ÀÎÁõÅ°)/json/CardSubwayStatsNew/1/600/20190501
+			//ì§€í•˜ì² 
+			//http://openapi.seoul.go.kr:8088/(ì¸ì¦í‚¤)/json/CardSubwayStatsNew/1/600/20190501
 			//http://openapi.seoul.go.kr:8088/(575a4655496b636839386f58586542)/json/CardSubwayStatsNew/1/600/20190501
-			//Ä«Ä«¿À Áöµµ
+			//ì¹´ì¹´ì˜¤ ì§€ë„
 			//https://dapi.kakao.com/v2/local/search/keyword.json
 			String url = "https://dapi.kakao.com/v2/local/search/keyword.json";
 			url += "?query=" + str;
@@ -39,19 +37,19 @@ public class KMain {
 
 			URL u = new URL(url);
 			HttpsURLConnection hsuc = (HttpsURLConnection) u.openConnection();
-			hsuc.setRequestProperty("Authorization", "KakaoAK c7354f2e382729cf15b544a66527a8f2");
+			hsuc.setRequestProperty("Authorization", "KakaoAK kkkkkkkkkkkkkkkkkkkkkkk");
 			
 			InputStream is = hsuc.getInputStream();
 			InputStreamReader isr = new InputStreamReader(is, "utf-8");
 					
 			// json-simple.jar
 			JSONParser jp = new JSONParser();
-			// ½ÃÀÛÀÌ
-			// [ : ¹è¿­ => JSONArray
-			// { : °´Ã¼ => JSONObject
-			// ÆÄ½Ì ½ÃÀÛ => ÀüÃ¼¸¦ locData¶ó´Â º¯¼ö¿¡ ÀúÀå
+			// ì‹œì‘ì´
+			// [ : ë°°ì—´ => JSONArray
+			// { : ê°ì²´ => JSONObject
+			// íŒŒì‹± ì‹œì‘ => ì „ì²´ë¥¼ locDataë¼ëŠ” ë³€ìˆ˜ì— ì €ì¥
 			JSONObject locData = (JSONObject) jp.parse(isr); 
-			// locData.get("¼Ó¼º¸í")
+			// locData.get("ì†ì„±ëª…")
 			JSONObject meta = (JSONObject) locData.get("meta");
 			System.out.println(meta.get("total_count"));
 			
