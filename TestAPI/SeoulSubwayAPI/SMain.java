@@ -15,20 +15,18 @@ import org.json.simple.parser.JSONParser;
 public class SMain {
 
 	public static void main(String[] args) {
-		// X-Naver-Client-Id = hq9h9FZ9BzmGN2YhhjYa
-		// X-Naver-Client-Secret = YqVXedDtL2
 		String str = null;
 		Scanner sc = new Scanner(System.in);
 
 		try {
-			System.out.print("¾ğÁ¦ : ");
+			System.out.print("ì–¸ì œ : ");
 			str = sc.next();
 			str = URLEncoder.encode(str, "utf-8");
 
-			// ÁöÇÏÃ¶
-			// http://openapi.seoul.go.kr:8088/(ÀÎÁõÅ°)/json/CardSubwayStatsNew/1/600/20190501
+			// ì§€í•˜ì² 
+			// http://openapi.seoul.go.kr:8088/(ì¸ì¦í‚¤)/json/CardSubwayStatsNew/1/600/20190501
 			// http://openapi.seoul.go.kr:8088/(575a4655496b636839386f58586542)/json/CardSubwayStatsNew/1/600/20190501
-			// Ä«Ä«¿À Áöµµ
+			// ì¹´ì¹´ì˜¤ ì§€ë„
 			// https://dapi.kakao.com/v2/local/search/keyword.json
 			String url = "http://openapi.seoul.go.kr:8088/575a4655496b636839386f58586542/json/CardSubwayStatsNew/1/600/";
 			url += str;
@@ -43,7 +41,7 @@ public class SMain {
 			JSONParser jp = new JSONParser();
 			JSONObject subwayData = (JSONObject) jp.parse(isr);
 			JSONObject cssn = (JSONObject) subwayData.get("CardSubwayStatsNew");
-			System.out.println("ÃÑ ¿ªÀÇ ¼ö : " + cssn.get("list_total_count"));
+			System.out.println("ì´ ì—­ì˜ ìˆ˜ : " + cssn.get("list_total_count"));
 
 			JSONArray row = (JSONArray) cssn.get("row");
 			JSONObject station = null;
