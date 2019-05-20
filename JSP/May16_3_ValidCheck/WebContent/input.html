@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// onsubmit에 return false; => 요청이 가지 않음
+	function check() {
+		// input객체 : document.form이름.input이름
+		// 내용 : input객체.value
+		var idInput = document.f.id;
+
+		// 입력을 안했는지
+		if (!idInput.value) {
+			alert("ID입력 안함");
+			idInput.focus(); 		// 커서 강제로
+			return false;
+		}
+		
+		// 글자수 체크
+		if (idInput.value.length < 4) {
+			alert("ID는 4글자 이상");
+			idInput.focus();
+			idInput.value = "";
+			return false;
+		}
+		
+		var pwInput = document.f.pw;
+		var pwCheckInput = document.f.pwCheck;
+		// pw, pw확인 동일 여부 체크
+		if (pwInput.value != pwCheckInput.value) {
+			alert("pw확인");
+			pwInput.value = "";
+			pwCheckInput.value = "";
+			pwInput.focus();
+			return false;
+		}
+		
+		var ageInput = document.f.age;
+		// 숫자만
+		// 숫자가 아닌게 들어있으면 true
+		if (isNaN(ageInput.value)) {
+			alert("숫자만");
+			ageInput.value = "";
+			ageInput.focus();
+			return false;
+		}
+		
+		// asd523
+		// 비번조합(숫자/대문자는 하나 이상 들어가야만)
+		var upperOK = false;
+		var upper = "QWERTYUIOPASDFGHJKLZXCVBNM";
+		for (var i = 0; i < upper.length; i++) {
+			if(pwInput.value.indexOf(upper[i]) != -1){
+				upperOK = true;
+				break;
+			}
+		}
+		
+		var numOK = false;
+		var num = "1234567890";
+		for (var i = 0; i < num.length; i++) {
+			if (pwInput.value.indexOf(num[i]) != -1) {
+				numOK = true;
+				break;
+			}
+		}
+		if (!numOK || !upperOK){
+			alert("비번조합문제");
+			return false;
+		}
+				
+		return true;
+	}
+	
+	//var str = "abcdefg";
+	// 특정위치에 있는 글자
+	//alert(str[2]);
+	
+	// str에 'c'가 몇번째 위치에 있는지
+	//alert(str.indexOf('c')); // 있으면 글자 위치 리턴
+	
+	// str에 'z'가 들어있는지 여부
+	//alert(str.indexOf('z')); // 없으면 -1이 리턴
+</script>
+</head>
+<body>
+	<form name="f" action="ABCD" onsubmit="return check();">
+		id : <input name="id" 
+					maxlength="10" 
+					placeholder="필수, 4~10자"
+					autofocus="autofocus"
+					autocomplete="off"><p>
+		pw : <input name="pw" 
+					type="password"
+					placeholder="필수, 4~10글자, 영문자/숫자 조합"><p>
+		pw확인 : <input name="pwCheck" type="password"><p>
+		나이 : <input name="age"><p>
+		<button>요청</button>
+	</form>
+</body>
+</html>
+
+
+
+

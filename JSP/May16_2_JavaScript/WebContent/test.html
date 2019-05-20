@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="test.js"></script>
+<script type="text/javascript">
+	var a = 10;
+	var b = "ㅋㅋㅋ";
+
+	// alert(a); // 경고창
+
+	/* var c = confirm(a);
+	if (c) {
+		alert("확인 누름");
+	} else {
+		alert('취소 누름');
+	} */
+
+	/* var c = prompt(a);
+	alert(c); */
+
+	// 1. 함수정의
+	function test() {
+		alert("ㅋㅋㅋ");
+	}
+	function hahaha() {
+		for (var i = 0; i < 5; i++) {
+			alert('ㅎ');
+		}
+	}
+	function arrayTest() {
+		var arr = [ 11, 123, 5, 67 ];
+		for (var i = 0; i < arr.length; i++) {
+			alert(arr[i]);
+		}
+	}
+	function objectTest(){
+		var d = {name:"뽀삐", age:3};
+		alert(d);
+		alert(d.name);
+		alert(d.age);
+	}
+	// event-driven programming
+	// 		callback함수기반(이벤트 기반)
+	
+	// callback함수
+	// 		특정 이벤트에 연결
+	// 		그 이벤트가 발생하면 자동으로 호출
+	function aoTest(){
+		var ar = [
+					{name : "홍", age : 10}, 
+					{name : "김", age : 20}
+				];
+		alert(ar);
+		alert(ar[0]);
+		alert(ar[0].name);
+	}
+</script>
+</head>
+<body onkeydown="objectTest();" onload="aoTest();">
+	<button onclick="gogogo();">버튼</button>
+	<!-- 2. HTML DOM객체에 그 함수 연결 -->
+	<h1 onclick="test();">ㅋㅋㅋ</h1>
+	<h2 ondblclick="hahaha();">ㅎㅎㅎ</h2>
+	<h2 onmouseenter="arrayTest();">배열</h2>
+	back-end인공지능개발자 : 안보이는 쪽(AI) front-end인공지능개발자 : 보는 쪽(웹or앱or?)
+	full-stack개발자 : 다 HTML : 뼈대 CSS : 디자인 JavaScript : 이벤트 웹 페이지의 이벤트를 처리하는
+	프로그래밍 언어 자바와 문법이 비슷한 스크립트 언어 본명: ESMAScript 클라이언트쪽 -> 웹브라우저가 실행 인터프리터
+	방식 자바보다 고급언어
+</body>
+</html>
+
+
+
+
+
+
+

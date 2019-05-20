@@ -1,0 +1,100 @@
+@charset "EUC-KR";
+
+@font-face{
+	/* 
+		폰트파일은 용량이 큼
+		저작권
+		CSS3에 추가된 기능 => IE?
+	*/
+	font-family: "365cool";
+	src: url("365cool.ttf");
+}
+#site {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto; /* 가운데 정렬 */
+}
+#siteTitle {
+	font-family:"365cool";
+	padding-left: 10px;
+	color: #F9A825;
+	font-size: 25pt;
+	font-weight: 900; /* 글자 굵기 */
+	height: 70px;
+	text-shadow: 2px 3px 4px black; /* x y 그라데이션 색깔 */
+}
+
+marquee{
+	width: 80px;
+}
+
+#siteMenu{
+	background-color: black;
+	height: 35px;
+}
+
+#mainImg{
+	/* 가로만 조절하면(세로만 조절하면) 원본 비율대로 조절됨 */
+	/* 300이 안되면 원본사이즈 사용, 300이 넘으면 300으로 줄이기 */
+	/* 퍼센트 단위 사용 가능 */
+	max-width: 55%;
+	margin-top: 30px;
+	
+	box-shadow: 5px 5px 10px black;
+	border-radius:20px; /* 모서리 깎기 */
+	border: orange outset 7px; /* 색깔 선종류 두께*/
+	/* 선 종류 
+	solid double 
+	dashed dotted 
+	ridge groove 
+	inset outset
+	*/
+}
+
+#siteMenu a{
+	color: orange;
+	margin-left: 15px;
+	text-decoration: none;
+	font-weight: 700;
+}
+#siteMenu a:hover {
+	color:red;
+}
+#siteMenu a:active {
+	color:white;
+}
+#bbsTable{
+	background-color: black; /*제목줄 */
+	color:orange; /* 제목줄*/
+	border-spacing: 0px; /* td간의 간격 */
+}
+.dataTr{
+	background-color: white;
+	color:black;
+}
+.dataTr:hover{
+	background-color: gray;
+}
+
+.snsMsg{
+	width: 80%;
+	box-shadow: 0px 0px 10px black;
+	margin-bottom: 20px;
+}
+.snsImgTd{
+	width: 50px;
+}
+.snsImg{
+	max-width: 45px;
+}
+.menuItem{
+	width: 100px;
+	border: black solid 3px;
+	float: left;
+	margin: 5px;
+}
+
+
+
+
+

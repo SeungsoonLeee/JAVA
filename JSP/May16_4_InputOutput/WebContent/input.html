@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+::placeholder {
+	color: red;
+	font-weight: 900;
+}
+</style>
+<script type="text/javascript" src="validCheck.js"></script>
+<script type="text/javascript">
+	function check() {
+		var nInput = document.f.n;
+		var pInput = document.f.p;
+		var dInput = document.f.d;
+		var iInput = document.f.i;
+		if (isEmpty(nInput)) {
+			return false;
+		} else if (isEmpty(pInput) || isNotNumber(pInput)) {
+			return false;
+		} else if (isEmpty(dInput)) {
+			return false;
+		} else if (isEmpty(iInput)
+				|| (isNotType(iInput, "jpg") && isNotType(iInput, "gif")
+						&& isNotType(iInput, "bmp") && isNotType(iInput, "png"))) {
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<form name="f" onsubmit="return check();" action="ASDF">
+		품명 : <input name="n" maxlength="10" placeholder="필수, 최대10글자">
+		<p>
+			가격 : <input name="p" placeholder="필수, 숫자만">
+		<p>
+			설명<br>
+			<textarea name="d" maxlength="100" placeholder="필수, 최대100글자" rows="5"
+				cols="30"></textarea>
+		<p>
+			이미지 : <input name="i" type="file"><span
+				style="color: red; font-weight: 900;"> : 필수, 그림파일(jpg, gif,
+				bmp, png)만</span>
+		<p>
+			<button>등록</button>
+	</form>
+</body>
+</html>
+
+

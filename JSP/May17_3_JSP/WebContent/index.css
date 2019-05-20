@@ -1,0 +1,68 @@
+@charset "EUC-KR";
+
+@font-face {
+	font-family: "Sam3KRFont";
+	src: url("Sam3KRFont.ttf");
+}
+
+table {
+	font-family: "Sam3KRFont";
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+}
+
+input, select, button {
+	font-family: "Sam3KRFont";
+	outline: none;
+}
+
+#iTable {
+	background-color: green;
+	color: white;
+}
+
+#iTitle {
+	background-color: white;
+	color: green;
+	font-size: 20pt;
+	height: 40px;
+}
+
+.iInput {
+	width: 90%;
+	height: 30px;
+	border: none;
+	border-radius: 5px;
+	text-align: center;
+}
+
+button {
+	width: 90%;
+	background-color: transparent;
+	color: white;
+	border: none;
+	height: 35px;
+	cursor: pointer;
+	font-size: 14pt;
+}
+
+#aTable{
+	background-color: red;
+}
+#bTable{
+	background-color: blue;
+}
+#cTable{
+	background-color: yellow;
+}
+#dTable{
+	background-color: orange;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+table {
+	color: blue;
+}
+
+input {
+	border: green solid 2px;
+	color: fuchsia;
+	outline: none;
+	text-align: center;
+}
+
+input:focus {
+	background-color: yellow;
+}
+
+input::placeholder {
+	color: red;
+}
+</style>
+<script type="text/javascript" src="validCheck.js"></script>
+<script type="text/javascript">
+	function check() {
+		var xField = document.f.x;
+		var yField = document.f.y;
+		if (isEmpty(xField) || isNotNumber(xField)) {
+			alert("x");
+			return false;
+		} else if (isEmpty(yField) || isNotNumber(yField)) {
+			alert("y");
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<form action="output.jsp" name="f" onsubmit="return check();">
+		<table>
+			<tr>
+				<td colspan="2" align="center">사칙연산</td>
+			</tr>
+			<tr>
+				<td>x</td>
+				<td><input name="x" placeholder="숫자만" autocomplete="off"></td>
+			</tr>
+			<tr>
+				<td>y</td>
+				<td><input name="y" autocomplete="off"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><button>계산</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+
+

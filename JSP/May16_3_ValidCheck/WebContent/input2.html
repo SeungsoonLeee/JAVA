@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="validCheck.js"></script>
+<script type="text/javascript">
+	function check(){
+		var idInput = document.ff.id;
+		var pwInput = document.ff.pw;
+		var pwCheckInput = document.ff.pwCheck;
+		var ageInput = document.ff.age;
+		var fileInput = document.ff.f;
+		
+		if (isEmpty(idInput) || lessThan(idInput, 5) || containsHangul(idInput)) {
+			alert("ID?");
+			idInput.value = "";
+			idInput.focus();
+			return false;
+		} else if(isEmpty(pwInput) || 
+				lessThan(pwInput, 5) ||
+				notEquals(pwInput, pwCheckInput) ||
+				notContains(pwInput, "1234567890") ||
+				notContains(pwInput, "QWERTYUIOPASDFGHJKLZXCVBNM") ||
+				notContains(pwInput, "!@#$%^&*()\\")) {
+			alert("PW?");
+			pwInput.value = "";
+			pwCheckInput.value = "";
+			pwInput.focus();
+			return false;
+		}else if(isEmpty(ageInput) 
+				|| isNotNumber(ageInput)){
+			alert("나이?");
+			ageInput.value = "";
+			ageInput.focus();
+			return false;
+		}else if(isEmpty(fileInput) ||
+			isNotType(fileInput, "png")){
+			alert("파일?");
+			return false;
+		} 
+		return true;
+	}
+</script>
+</head>
+<body>
+	<form name="ff" action="ABCD" onsubmit="return check();">
+		ID <input name="id" 
+			maxlength="10" 
+			placeholder="필수, 5~10글자, 한글x"
+			autofocus="autofocus"
+			autocomplete="off"><p>
+		PW <input name="pw" type="password"><p>
+		PW확인 <input name="pwCheck" type="password"><p>
+		나이 <input name="age"><p>
+		파일 <input type="file" name="f"><p>
+		<button>ㅋ</button>
+	</form>
+</body>
+</html>
+

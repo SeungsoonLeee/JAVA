@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+	html5에서 input종류가 많이 추가 
+	ie : html5제대로 지원 못함	
+-->
+	<form action="Output" method="post">
+		이름 : <input type="text" name="n"><p> <!-- 일반 글자, 기본 -->
+		비밀번호 : <input type="password" name="p"><p> <!-- 일반 글자(안보이는) -->
+		성별 : <br>
+		<input type="radio" name="g" value="남자">남<br>
+		<input type="radio" name="g" value="여자">여<br>
+		성별 : <br>
+		<select name="g2">
+			<option value="남">남자</option>
+			<option>여자</option>
+		</select><p>
+		관심사 : <br>
+		<input type="checkbox" name="i" value="스포츠">스포츠<br>
+		<input type="checkbox" name="i" value="게임">게임<br>
+		<input type="checkbox" name="i" value="IT">IT<br>
+		관심사 : <br>
+		<select name="i2" size="4" multiple="multiple">
+			<option>스포츠</option>
+			<option>게임</option>
+			<option>IT</option>
+		</select><p>
+		할 말<br>
+		<textarea name="s" rows="3" cols="100"></textarea><p>
+		<input type="file"><p>
+		<input type="reset" value="form 다 지우기">
+		<hr>
+		<input type="submit" value="ㅋㅋㅋ"><p><!-- 요청 버튼 -->
+		<button>요청</button><p>
+		<input type="image" src="ball.png">	<!-- 그림 요청 버튼 -->
+	</form>
+</body>
+</html>
+
+
+
+

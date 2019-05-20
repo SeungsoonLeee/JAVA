@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	통신방식://주소:포트번호/폴더명/폴더명/.../파일명?변수명=값&변수명=값&변수명=값...
+
+	이 html에서 뭘 누르면 저런 주소가 자동으로 만들어져서
+	요청까지<hr>
+	<!-- 
+		a
+			GET방식요청 
+			응답 결과가 그 웹브라우저로 열 수 있는 파일 : 열어줌
+			응답 결과가 그 웹브라우저로 열지 못하는 파일 : 다운받아줌
+	-->
+	<a href="MS2?x=10&y=5">계산하기</a> <br>
+	<a href="a4.jpg">그림파일</a> <br>
+	<a href="res.zip">압축파일</a>
+	<hr>
+	<!-- 
+		form + input 
+		form속에 버튼모양인거 아무거나
+		그 버튼을 누르면 요청
+		MS2?x=XXX&y=XXX	
+	-->
+	<form action="MS2" method="post">
+		x : <input name="x"><br>
+		y : <input name="y"><br>
+		<button>계산</button>
+	</form>
+</body>
+</html>
+
+
+
+

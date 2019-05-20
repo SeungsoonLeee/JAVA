@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="validCheck.js"></script>
+<script type="text/javascript">
+	function check() {
+		var nameInput = document.f.name;
+		var e1Input = document.f.e1;
+		var e2Input = document.f.e2;
+		var bInput = document.f.birthday1;
+		var heightInput = document.f.height;
+		var photoInput = document.f.photo;
+		var etcInput = document.f.etc;
+		
+		if (isEmpty(nameInput)) {
+			alert('이름');
+			return false;
+		} else if(isEmpty(e1Input) || e2Input.value == '선택'){
+			alert('이메일');
+			return false;
+		} else if(isEmpty(bInput) || 
+				lessThan(bInput, 6) || 
+				isNotNumber(bInput)){
+			alert('생일');
+			return false;
+		} else if(isEmpty(heightInput) 
+				|| isNotNumber(heightInput)){
+			alert('키');
+			return false;
+		} else if(isEmpty(photoInput) || 
+			( isNotType(photoInput, "png") &&
+			  isNotType(photoInput, "jpg") && 
+			  isNotType(photoInput, "gif"))){
+			alert('사진');
+			return false;
+		} else if(isEmpty(etcInput) || 
+				isNotType(etcInput, "pdf")){
+			alert('이력서');
+			return false;
+		}
+		
+		return true;
+	}
+</script>
+</head>
+<body>
+	<form name="f" action="AAA" onsubmit="return check();">
+		이름 : <input name="name" maxlength="10">
+		<hr>
+		이메일 : <input name="e1" maxlength="10"> @ 
+		<select name="e2">
+			<option>선택</option>
+			<option>naver.com</option>
+			<option>gmail.com</option>
+			<option>직접입력</option>
+		</select>
+		<hr>
+		생년월일 : <br> 
+		<input name="birthday1" maxlength="6"><br> 
+		<select name="b_year">
+			<option>1980</option>
+			<option>1990</option>
+		</select>년 
+		<select name="b_month">
+			<option>1</option>
+			<option>12</option>
+		</select>월 
+		<select name="b_day">
+			<option>1</option>
+			<option>31</option>
+		</select>일
+		<hr>
+		키 : <input name="height">
+		<hr>
+		성별 : <br> 
+		<input type="radio" checked="checked">남<br>
+		<input type="radio">여
+		<hr>
+		관심사 : <br> 
+		<input type="checkbox">스포츠<br> 
+		<input type="checkbox">IT<br> 
+		<input type="checkbox">게임<br>
+		<hr>
+		증명사진 : <input type="file" name="photo">
+		<hr>
+		이력서(PDF) : <input type="file" name="etc">
+		<hr>
+		<button>제출</button>
+	</form>
+</body>
+</html>
+
+
