@@ -1,0 +1,6 @@
+@charset "EUC-KR";
+textarea {
+	width: 200px;
+	height: 100px;
+	resize: none;
+}

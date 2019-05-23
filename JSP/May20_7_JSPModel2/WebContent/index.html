@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 브라우저 정보
+	// alert(navigator.userAgent);
+	// document : 이 html
+	// window : 브라우저(디자인적인 쪽)
+	// navigator : 브라우저(기능적인 쪽)
+	if (navigator.userAgent.indexOf("Android") != -1 ||
+			navigator.userAgent.indexOf("iPhone") != -1){
+		location.href = "MHC";
+	} else {
+		location.href = "HomeController";
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

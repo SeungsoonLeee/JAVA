@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/input.css">
+<script type="text/javascript" src="js/validCheck.js"></script>
+<script type="text/javascript" src="js/check.js"></script>
+</head>
+<body>
+	<img src="img/bicycle.jpg">
+	<form action="HomeController" name="f"
+		method="post" onsubmit="return check();">
+		<input name="wheel" id="w" autocomplete="off" autofocus="autofocus"><p>
+		<input name="front" id="f" autocomplete="off"><p>
+		<input name="back" id="b" autocomplete="off"><p>
+		<input name="count" id="c" autocomplete="off"><p>
+		<button>계산</button> 
+	</form>
+</body>
+</html>

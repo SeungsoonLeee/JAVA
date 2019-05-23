@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/index.css">
+<script type="text/javascript" src="js/validCheck.js"></script>
+<script type="text/javascript" src="js/check.js"></script>
+</head>
+<body>
+	<form name="f" onsubmit="return check();" 
+	action="HomeController"
+	method="post"
+	enctype="multipart/form-data">
+		<table>
+			<tr>
+				<td align="center">비만도검사</td>
+			</tr>
+			<tr>
+				<td align="center"><input name="n" placeholder="이름"></td>
+			</tr>
+			<tr>
+				<td align="center"><input name="h" placeholder="키"></td>
+			</tr>
+			<tr>
+				<td align="center"><input name="w" placeholder="몸무게"></td>
+			</tr>
+			<tr>
+				<td align="center"><input type="file" name="p"></td>
+			</tr>
+			<tr>
+				<td align="center"><button>확인</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+
+
+
+

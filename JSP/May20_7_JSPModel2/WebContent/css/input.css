@@ -1,0 +1,33 @@
+@charset "EUC-KR";
+input{
+	width: 50px;
+	text-align: center;
+	border:red solid 3px;
+	position: absolute; 
+}
+#w{
+	/* 좌표조절 */
+	/* 좌표 체계(position)*/
+	/* absolute : 기준이 html */
+	/* fixed : 기준이 웹브라우저 */
+	left: 400px;
+	top:200px;
+}
+#f{
+	left: 230px;
+	top:230px;
+}
+#b{
+	left: 100px;
+	top:170px;
+}
+#c{
+	left: 230px;
+	top:150px;
+}
+button{
+	position:absolute;
+	left: 230px;
+	top:300px;
+	font-size: 20pt;
+}

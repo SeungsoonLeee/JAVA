@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function go(){
+		location.href = "output.jsp?x=30&y=40";
+	}
+	function go2(){
+		var xxInput = document.getElementById("xx");
+		var yyInput = document.getElementById("yy");
+		
+		location.href 
+				= "output.jsp?x=" + xxInput.value
+					+ "&y=" + yyInput.value;
+	}
+</script>
+</head>
+<body>
+	<h1>input</h1>
+	수동이동 : 사용자가 어떤 이벤트를 일으키면 이동
+	<hr>
+	<input id="xx">
+	<input id="yy">
+	<button ondblclick="go2();">JavaScript로 form처럼 쓰기</button>
+	<hr>
+	<form action="output.jsp">
+		<input name="x">
+		<input name="y">
+		<button>form + button</button>
+	</form>
+	GET/POST방식요청, form속에서 엔터 or 버튼눌러서
+	<hr>
+	<button ondblclick="go();">JavaScript로</button>
+	GET방식요청(POST도 가능), 이벤트 종류 지정가능
+	<hr>
+	<a href="output.jsp?x=10&y=20">a로</a>
+	GET방식요청, 클릭해서
+	<hr>
+</body>
+</html>
+
+
+
+
+
+
+
