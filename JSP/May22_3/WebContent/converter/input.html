@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="ConverterController" 
+		name="converterForm" 
+		onsubmit="return converterCheck();">
+		<table id="iTable">
+			<tr>
+				<td align="center" id="iTitle">단위변환</td>
+			</tr>
+			<tr>
+				<td>값</td>
+			</tr>
+			<tr>
+				<td align="center"><input name="n" class="iInput" autocomplete="off"></td>
+			</tr>
+			<tr>
+				<td>단위</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<select name="what" class="iInput">
+						<option value="a">cm → inch</option>
+						<option value="b">㎡ → 평</option>
+						<option value="c">℃ → ℉</option>
+						<option value="d">km/h → mi/h</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<button>변환</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+
+
+
+
+
+

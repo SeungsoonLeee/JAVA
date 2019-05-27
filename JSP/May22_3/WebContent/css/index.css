@@ -1,0 +1,39 @@
+@charset "EUC-KR";
+
+#site {
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	border-spacing: 0px;
+}
+
+#siteTitle {
+	font-size: 25pt;
+	font-weight: 900;
+	color: #0288D1;
+	height: 70px;
+	padding-left: 10px;
+}
+
+#siteMenu {
+	background-color: #01579B;
+	height: 40px;
+	padding-left: 10px;
+}
+
+#siteContent {
+	padding:20px;
+	height: 430px; 
+}
+
+#siteMenu a{
+	color:white;
+	font-weight: 800;
+	text-decoration: none;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#siteMenu a:hover{
+	color:yellow;
+}
