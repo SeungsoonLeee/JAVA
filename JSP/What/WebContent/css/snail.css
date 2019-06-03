@@ -1,0 +1,49 @@
+@charset "EUC-KR";
+#snailInputTable{
+	font-family:"b";
+	margin-top:20px;
+	margin-bottom:20px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 30px;
+	border-radius: 5px;
+	background-color: #8D6E63;
+}
+#snailSizeInput{
+	border:none;
+	font-family:"b";
+	width:150px;
+	height: 97%;
+	font-size: 15pt;
+	color:#8D6E63;
+	font-weight: 800;
+	text-align: center;
+	border-radius: 5px;
+}
+#snailButton{
+	background-color: transparent;
+	color:white;
+	border:none;
+	font-size: 15pt;
+	font-weight: 800;
+	font-family:"b";
+	text-align: center;
+}
+#snailTable {
+	font-family:"b";
+	margin-top:20px;
+	background-color: #8D6E63;
+	margin-left: auto;
+	margin-right: auto;
+	font-weight: 900;
+	font-size:15pt;
+	border-radius: 5px;
+}
+
+#snailTable tr td {
+	background-color: white;
+	color: #8D6E63;
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+}

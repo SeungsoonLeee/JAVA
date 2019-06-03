@@ -1,0 +1,59 @@
+@charset "EUC-KR";
+textarea{
+	resize: none;
+	width: 150px;
+	height: 50px;
+}
+button, input{
+	outline:none;
+}
+a{
+	text-decoration: none;
+}
+::-webkit-scrollbar{
+	/* webkit방식 브라우저에서만 */
+	display: none;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+#siteMenuArea {
+	width: 100%;
+	height: 45px;
+	background-color: #B71C1CCC;
+	position: fixed; /* 웹브라우저 기준으로 좌표 */
+	top: 0px;
+}
+
+#siteMenu {
+	width: 1000px;
+}
+#siteMenu tr td a {
+	margin-left: 20px;
+	margin-right: 20px; 
+	color : white;
+	font-weight: 800;
+}
+#siteMenu tr td a:hover {
+	color: yellow;
+}
+#site{
+	width: 1000px;
+	margin-top: 47px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#siteTitle{
+	height: 70px;
+}
+#siteTitle a{
+	font-size: 25pt;
+	color:#D32F2F;
+	font-weight: 900;
+}
+#siteContent{
+	padding: 10px;
+}

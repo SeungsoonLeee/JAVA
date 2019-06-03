@@ -1,0 +1,56 @@
+@charset "EUC-KR";
+
+.r {
+	background-color: #EF9A9A;
+	width: 180px;
+	height: 180px;
+	font-size: 15pt;
+	font-weight: 900;
+	border-radius: 20px;
+	float: left;
+	margin: 5px;
+}
+
+.g {
+	background-color: #A5D6A7;
+	width: 180px;
+	height: 180px;
+	font-size: 15pt;
+	font-weight: 900;
+	border-radius: 20px;
+	float: left;
+	margin: 5px;
+}
+
+.b {
+	background-color: #90CAF9;
+	width: 180px;
+	height: 180px;
+	font-size: 15pt;
+	font-weight: 900;
+	border-radius: 20px;
+	float: left;
+	margin: 5px;
+}
+
+.w {
+	background-color: white;
+	width: 180px;
+	height: 180px;
+	font-size: 15pt;
+	font-weight: 900;
+	border-radius: 20px;
+	float: left;
+	margin: 5px;
+}
+
+#rail {
+	width: 99%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#money {
+	font-size: 20pt;
+	font-weight: 900;
+}

@@ -1,0 +1,33 @@
+@charset "EUC-KR";
+#locSearchTable{
+	margin-left: auto;
+	margin-right: auto;
+}
+#locSearchInput{
+	border: #3F51B5 solid 3px;
+	height: 30px;
+	width: 150px;
+	text-align: center;
+}
+#locSearchBtn{
+	border: none;
+	background-color: transparent;
+	color:#3F51B5; 
+	font-weight: 900;
+	font-size: 13pt;
+}
+.loc{
+	float:left;
+	margin: 10px;
+	box-shadow: 3px 3px 3px black;
+	border-spacing: 0px;
+	font-weight: 700;
+}
+.locName{
+	font-weight: 900;
+	background-color: #3F51B5;
+	color:white;
+}
+.loc tr td{
+	padding: 5px;
+}

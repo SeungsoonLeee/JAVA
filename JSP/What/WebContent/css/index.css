@@ -1,0 +1,64 @@
+@charset "EUC-KR";
+
+@font-face {
+	font-family: "a";
+	src: url("a.TTF");
+}
+@font-face {
+	font-family: "b";
+	src: url("b.TTF");
+}
+::-webkit-scrollbar{
+	display: none;
+}
+a{
+	text-decoration: none;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+}
+input, button{
+	outline:none;
+}
+#siteTitleArea {
+	width: 100%;
+	position: fixed;
+	top:0px;
+	border-spacing: 0px;
+}
+
+#siteTitle {
+	width: 1000px; 
+	height:70px;
+	background-color:#FFFFFFAA;
+}
+#siteTitle tr td a{
+	color: #43A047;
+	font-size: 35pt;
+	font-weight: 700;
+	font-family: "a";
+}
+#siteMenu{
+	position: fixed;
+	top:70px;
+	right:15px;
+	width: 150px;
+	background-color: #2E7D32;
+	box-shadow: 2px 2px 2px black;
+}
+#siteMenu tr td{
+	padding-left: 10px;
+	height: 35px;
+}
+#siteMenu tr td a{
+	color:white;
+	font-family: "a";
+	font-size: 15pt;
+}
+#siteContent{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 70px;
+}

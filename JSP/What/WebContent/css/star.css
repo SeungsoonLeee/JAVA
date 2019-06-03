@@ -1,0 +1,52 @@
+@charset "EUC-KR";
+
+#starInputTable {
+	margin-top: 30px;
+	width: 300px;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #00897B;
+	color: white;
+	font-size: 20pt;
+	font-family: "b";
+	box-shadow: 3px 3px 3px black;
+}
+
+#starInput {
+	border: none;
+	border-bottom: white solid 3px;
+	background-color: transparent;
+	color: white;
+	font-size: 20pt;
+	width: 90%;
+	text-align: center;
+	font-family: "b";
+}
+
+#starInput::placeholder {
+	color: white;
+}
+
+#starButton {
+	border: white solid 3px;
+	background-color: transparent;
+	color: white;
+	font-size: 20pt;
+	width: 90%;
+	font-family: "b";
+}
+
+#starInputTitle {
+	background-color: white;
+	color: #00897B;
+	font-weight: 900;
+	font-size: 30pt;
+}
+
+#starArea {
+	color: #EF6C00;
+	font-size: 20pt;
+	font-weight: 900;
+	text-shadow: 0px 0px 23px yellow;
+}

@@ -1,0 +1,25 @@
+@charset "EUC-KR";
+#wordInputTable{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#preSay{
+	color:red;
+	font-size: 22pt;
+	font-weight: 900;
+}
+#wordInput{
+	width: 50%;
+	text-align: center;
+	font-size: 20pt;
+	font-weight: 900;
+	border:red solid 3px;
+	height: 70px;
+}
+#gameOver{
+	font-size: 50pt;
+	font-weight: 900;
+	color:red;
+	text-shadow: 5px 5px 5px orange;
+}

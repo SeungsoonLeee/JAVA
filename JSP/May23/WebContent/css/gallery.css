@@ -1,0 +1,19 @@
+@charset "EUC-KR";
+#photoUploadTitle{
+	color:#2E7D32;
+}
+#photoUploadBtn{
+	background-color: #2E7D32;
+	color:white;
+	font-weight:800;
+	border: none;
+	height: 25px;
+}
+#photoUploadResult{
+	color:red;
+	font-weight: 800;
+	font-size: 10pt;
+}
+img{
+	width: 100px;
+}

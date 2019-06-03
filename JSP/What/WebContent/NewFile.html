@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function showAlert(){
+		// 딜레이
+		// setTimeout(함수, 시간(ms));
+		setTimeout(function(){
+			alert("ㅋ");
+		}, 3000);
+	}
+	
+	// 타이머 관련 함수
+	// 반복
+	var started = false;
+	var t = null;
+	function start(){
+		var i = document.getElementById("i");
+		if (!started) {
+			// setInterval(함수, 시간(ms))
+			t = setInterval(function(){
+				i.value = Math.random();
+			}, 500);
+			started = true;
+		} else {
+			// setInterval멈추기
+			clearInterval(t);
+			started = false;
+		}
+	}
+</script>
+</head>
+<body>
+	<input id="i">
+	<button onclick="start();">시작</button>
+	<hr>
+	<button onclick="showAlert();">버튼</button>
+</body>
+</html>
+
+
+
+
+
+
