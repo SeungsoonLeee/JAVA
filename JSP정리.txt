@@ -23,9 +23,9 @@
     - Model, Controller 에서 만드는 값
     - Object
     - 클라이언트와 서버의 연결에 저장(연결만 끊어지지 않으면 값 계속 사용 가능)
+    - 브라우저 종료 시 증발
     - 유지시간이 존재하여 아무것도 작업하지 않으면 사라짐
         request.getSession().setMaxInactiveInterval(초단위시간)
-    - Object
     - 값 읽기
         Java : request.getSession().getAttribute("이름")
         EL : ${sessionScope.이름}
@@ -38,6 +38,7 @@
     - Model, Controller 에서 만드는 값
     - String
     - 클라이언트 컴퓨터에 파일로 저장(보안때문에 위험)
+    - 컴퓨터를 껐다 켜도 존재
     - 쿠키 유지시간을 설정할 수 있음
         cookie.setMaxAge(초단위시간);
     - 값 읽기
