@@ -1,4 +1,5 @@
 [parameter]
+    - request.getParameter()
     - View 에서 만드는 값
     - String or String[]
     - 요청에 저장 -> 새로운 요청이 일어나면 값 전달X
@@ -7,6 +8,8 @@
         EL : ${param.이름}
         
 [attribute]
+    - request.setAttribute()
+    - request.getAttribute()
     - Model, Controller 에서 만드는 값
     - Object
     - 요청에 저장 -> 새로운 요청이 일어나면 값 전달X
@@ -15,5 +18,34 @@
         EL : ${이름}
 
 [session]
+    - request.getSession().setAttribute()
+    - request.getSession().getAttribute()
+    - Model, Controller 에서 만드는 값
+    - Object
+    - 클라이언트와 서버의 연결에 저장(연결만 끊어지지 않으면 값 계속 사용 가능)
+    - 유지시간이 존재하여 아무것도 작업하지 않으면 사라짐
+        request.getSession().setMaxInactiveInterval(초단위시간)
+    - Object
+    - 값 읽기
+        Java : request.getSession().getAttribute("이름")
+        EL : ${sessionScope.이름}
 
 [cookie]
+    - Cookie 객체 생성하여 사용
+        String d = "2000";
+        Cookie cookie = new Cookie("d", d);
+        response.addCookie(cookie);
+    - Model, Controller 에서 만드는 값
+    - String
+    - 클라이언트 컴퓨터에 파일로 저장(보안때문에 위험)
+    - 쿠키 유지시간을 설정할 수 있음
+        cookie.setMaxAge(초단위시간);
+    - 값 읽기
+        Java : 현재 만들어져 있는 쿠키들 중에 내가 만든 쿠키를 읽어와야 함.
+               Cookie[] cookies = request.getCookies();
+               for(Cookie cookie : cookies) {
+                   if(cookie.getName().equals("d")){
+                       System.out.println(cookie.getValue());
+                   }
+               }
+        EL : ${cookie.이름.value}
