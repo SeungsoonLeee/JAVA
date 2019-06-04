@@ -1,0 +1,19 @@
+[parameter]
+    - View 에서 만드는 값
+    - String or String[]
+    - 요청에 저장 -> 새로운 요청이 일어나면 값 전달X
+    - 값 읽기
+        Java : request.getParameter("이름")
+        EL : ${param.이름}
+        
+[attribute]
+    - Model, Controller 에서 만드는 값
+    - Object
+    - 요청에 저장 -> 새로운 요청이 일어나면 값 전달X
+    - 값 읽기
+        Java : request.getAttribute("이름")
+        EL : ${이름}
+
+[session]
+
+[cookie]
