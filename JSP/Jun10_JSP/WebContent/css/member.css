@@ -1,0 +1,145 @@
+@charset "EUC-KR";
+#loginSuccessTbl{
+	border: #0D47A1 solid 2px;
+	box-shadow: 1px 1px 1px black;
+}
+#loginSuccessTbl td{
+	height: 30px;
+}
+#loginSuccessTd1 {
+	width: 50px;
+}
+
+#loginSuccessTd1 img {
+	max-width: 45px;
+	box-shadow: 1px 1px 1px black;
+}
+
+#loginSuccessId {
+	color: #0D47A1;
+	font-size: 14pt;
+}
+
+.loginSuccessBtn {
+	background-color: #0D47A1BB;
+	color: white;
+	font-size: 12pt;
+	border: none;
+	height: 25px;
+	margin:3px;
+	box-shadow: 1px 1px 1px black;
+}
+
+#loginTable td {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: #0D47A1;
+}
+
+.loginInput {
+	border: #0D47A1 solid 2px;
+	font-size: 12pt;
+	text-align: center;
+	width: 150px;
+	height: 25px;
+	box-shadow: 1px 1px 1px black;
+	background-color: #FFFFFFBB; /* transparent */
+}
+
+.loginInput::placeholder {
+	color: #0D47A1;
+}
+
+.loginBtn {
+	border: none;
+	background-color: #0D47A1BB;
+	color: white;
+	font-size: 12pt;
+	height: 28px;
+	box-shadow: 1px 1px 1px black;
+}
+
+#joinTable {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#joinTable td {
+	height: 50px;
+}
+
+.joinInput {
+	width: 80%;
+	border: #004D40 solid 2px;
+	font-size: 13pt;
+	padding-left: 10px;
+	height: 35px;
+	box-shadow: 1px 1px 1px black;
+}
+
+.joinTA {
+	width: 79.5%;
+	border: #004D40 solid 2px;
+	font-size: 13pt;
+	padding: 7px;
+	height: 120px;
+	box-shadow: 1px 1px 1px black;
+	resize: none;
+}
+
+.joinFileInputDiv {
+	text-align: left;
+	padding: 7px;
+	width: 79.5%;
+	height: 27px;
+	border: #004D40 solid 2px;
+	box-shadow: 1px 1px 1px black;
+	color: #004D40;
+	font-size: 13pt;
+}
+
+.joinFileInput {
+	color: #004D40;
+	font-size: 12pt;
+}
+
+.joinInput::placeholder, .joinTA::placeholder {
+	color: #004D40;
+	font-size: 13pt;
+}
+
+#joinBtn {
+	border: none;
+	background-color: #004D40BB;
+	box-shadow: 1px 1px 1px black;
+	color: white;
+	font-size: 18pt;
+	width: 81.7%;
+	height: 45px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.memberUpdateFileInputDiv{
+	text-align: left;
+	padding: 7px;
+	width: 79.5%;
+	border: #004D40 solid 2px;
+	box-shadow: 1px 1px 1px black;
+	color: #004D40;
+	font-size: 13pt;
+	margin-top: 2px;
+}
+#memberUpdateImg{
+	max-width: 100px;
+}
+.memberUpdateBtn {
+	border: none;
+	background-color: transparent;
+	color: #004D40;
+	font-size: 18pt;
+	width: 40%;
+	height: 45px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}

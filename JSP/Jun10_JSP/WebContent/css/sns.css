@@ -1,0 +1,26 @@
+@charset "EUC-KR";
+#snsWriteTable{
+	margin-left: auto;
+	margin-right: auto;
+}
+#snsWriteTable textarea{
+	width:500px;
+	height:70px;
+	border:#B71C1C solid 3px;
+	padding: 7px;
+}
+#snsWriteTable textarea::placeholder{
+	color:#B71C1C;
+}
+#snsWriteTable button{
+	width: 70px;
+	border:none;
+	background-color: transparent;
+	color:#000000;
+	font-size: 15pt;
+	font-weight: 800;
+}
+#snsLoadTable{
+	margin-left: auto;
+	margin-right: auto;
+}

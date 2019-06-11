@@ -1,0 +1,81 @@
+@charset "EUC-KR";
+
+@font-face {
+	font-family: "a";
+	src: url("DOSMyungjo.ttf");
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+table {
+	border-spacing: 0px;
+}
+
+a {
+	text-decoration: none;
+}
+
+body, input, button, textarea, select {
+	font-family: "a";
+	outline: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+#siteTitleArea {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+}
+
+#siteMenuArea {
+	background-color: #0D47A1BB;
+	height: 50px;
+}
+
+#siteMenuArea2 {
+	width: 1000px;
+}
+
+#siteMenuArea td {
+	width: 50%;
+}
+
+#siteMenuArea2 a {
+	color: white;
+	font-size: 15pt;
+	font-weight: 900;
+}
+
+#siteTitleArea2 {
+	height: 80px;
+	background-color: #FFFFFFBB;
+}
+
+#siteTitleArea2 a {
+	font-size: 30pt;
+	font-weight: 900;
+	color: #0D47A1;
+}
+
+#siteLoginArea {
+	position: fixed;
+	right: 20px;
+	top: 135px;
+}
+
+#siteContentArea {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 135px;
+}
