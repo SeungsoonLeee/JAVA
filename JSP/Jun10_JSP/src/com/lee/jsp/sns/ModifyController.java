@@ -31,7 +31,7 @@ public class ModifyController extends HttpServlet {
 		SNSDAO.getSdao().makeToken(request, response);
 		SNSDAO.getSdao().clearSearch(request, response);
 		if (MemberDAO.getMdao().loginCheck(request, response)) {
-			SNSDAO.getSdao().getSNS(request, response);
+			SNSDAO.getSdao().getMsg(request, response);
 			request.setAttribute("contentPage", "sns/msg.jsp");
 		}
 		else {

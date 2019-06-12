@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lee.jsp.home.DBManager;
+import com.lee.jsp.sns.SNSDAO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -149,7 +150,7 @@ public class MemberDAO {
 
 	public void join(HttpServletRequest request, HttpServletResponse response) {
 		String path = request.getSession().getServletContext().getRealPath("img");
-		System.out.println(path);
+//		System.out.println(path);
 		MultipartRequest mr = null;
 		String photo = null;
 		try {
@@ -199,13 +200,43 @@ public class MemberDAO {
 		request.setAttribute("cmt", m.getComment().replace("<br>", "\r\n"));
 	}
 
+	
+	public int getDeleteMsgCount(String id) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			con = DBManager.connect();
+			
+			String sql = "select count(*) from jun10_sns where s_id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			rs.next();
+			
+			int count = rs.getInt("count(*)");
+					
+			return count;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		
+		return -1;
+	}
+	
 	public void secession(HttpServletRequest request, HttpServletResponse response) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
 		try {
 			con = DBManager.connect();
 
 			Member m = (Member) request.getSession().getAttribute("m");
+			int deleteMsgCount = getDeleteMsgCount(m.getId());
 
 			String sql = "delete from jun05_member where m_id=?";
 			pstmt = con.prepareStatement(sql);
@@ -213,13 +244,19 @@ public class MemberDAO {
 
 			if (pstmt.executeUpdate() == 1) {
 				request.setAttribute("result", "탈퇴 성공");
-
+				
 				// 사진 삭제 작업
 				String m_photo = URLDecoder.decode(m.getPhoto(), "euc-kr");
 				String path = request.getSession().getServletContext().getContextPath();
 				new File(path + "/" + m_photo).delete();
 				System.out.println(path);
 
+				//탈퇴한 사람이 쓴 글의 수를 체크하여 빼주어야 함.
+				int allMsgCount = SNSDAO.getSdao().getAllMsgCount();
+				if(allMsgCount >= 0) {
+					SNSDAO.getSdao().setAllMsgCount(allMsgCount - deleteMsgCount);
+				}
+				
 			} else {
 				request.setAttribute("result", "탈퇴 실패");
 			}
@@ -230,7 +267,7 @@ public class MemberDAO {
 			request.setAttribute("result", "탈퇴 실패");
 			logout(request, response);
 		} finally {
-			DBManager.close(con, pstmt, null);
+			DBManager.close(con, pstmt, rs);
 		}
 	}
 

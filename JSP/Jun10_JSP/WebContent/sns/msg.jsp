@@ -21,7 +21,7 @@
 						<td>¿€º∫¿œ : ${s.date }</td>
 					</tr>
 					<tr>
-						<td colspan="2" class="snsMsg"><textarea name="msg">${s.msg }</textarea></td>
+						<td colspan="2" class="snsMsg"><textarea id="msg">${s.msg }</textarea></td>
 					</tr>
 					<c:if test="${s.id == sessionScope.m.id }">
 						<tr>

@@ -30,7 +30,7 @@ public class SNSUpdateController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (MemberDAO.getMdao().loginCheck(request, response)) {
 			SNSDAO.getSdao().updateSNSMsg(request, response);
-			SNSDAO.getSdao().getSNS(request, response);
+			SNSDAO.getSdao().getMsg(request, response);
 		}
 		SNSDAO.getSdao().makeToken(request, response);
 		SNSDAO.getSdao().clearSearch(request, response);

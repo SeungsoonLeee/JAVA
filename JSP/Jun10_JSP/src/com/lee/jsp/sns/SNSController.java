@@ -29,9 +29,11 @@ public class SNSController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MemberDAO.getMdao().loginCheck(request, response);
+		SNSDAO.getSdao().clearSearch(request, response);
 		SNSDAO.getSdao().makeToken(request, response);
-		SNSDAO.getSdao().loadSNSMsg(request, response);
-		SNSDAO.getSdao().paging(1, request, response);
+//		SNSDAO.getSdao().getAllSNSMsg(request, response);
+//		SNSDAO.getSdao().paging(1, request, response);
+		SNSDAO.getSdao().getSNSMsg(1, request, response);
 		request.setAttribute("contentPage", "sns/sns.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

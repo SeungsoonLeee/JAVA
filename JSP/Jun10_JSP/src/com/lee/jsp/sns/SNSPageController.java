@@ -32,7 +32,8 @@ public class SNSPageController extends HttpServlet {
 		MemberDAO.getMdao().loginCheck(request, response);
 		SNSDAO.getSdao().makeToken(request, response);
 		int p = Integer.parseInt(request.getParameter("p"));
-		SNSDAO.getSdao().paging(p, request, response);
+//		SNSDAO.getSdao().paging(p, request, response);
+		SNSDAO.getSdao().getSNSMsg(p, request, response);
 		request.setAttribute("contentPage", "sns/sns.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

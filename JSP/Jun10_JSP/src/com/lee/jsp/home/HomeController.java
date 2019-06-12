@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lee.jsp.member.MemberDAO;
+import com.lee.jsp.sns.SNSDAO;
 
 /**
  * Servlet implementation class HomeComtroller
@@ -21,7 +22,7 @@ public class HomeController extends HttpServlet {
      */
     public HomeController() {
         super();
-        // TODO Auto-generated constructor stub
+        SNSDAO.getSdao().calAllMsgCount();
     }
 
 	/**

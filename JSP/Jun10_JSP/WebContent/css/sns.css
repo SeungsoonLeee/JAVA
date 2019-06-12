@@ -24,3 +24,30 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+#snsMsgTable{
+	width: 800px;
+	margin-top: 3px;
+	border: black solid 1px;
+}
+#snsMsgTable textarea{
+	width: 800px;
+	height: 100px;
+	padding: 7px;
+}
+#snsMsgTable img{
+	width: 90px;
+	height: 90px;
+}
+#snsMsgTable td{
+	border: black solid 1px;
+}
+.snsMsg{
+	height: 100px;
+	vertical-align:top;
+}
+#snsMsgTable button{
+	background-color: transparent;
+	color: whitegray;
+	font-size: 11pt;
+	
+}
