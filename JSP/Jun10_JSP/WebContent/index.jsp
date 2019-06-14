@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/member.css">
 <link rel="stylesheet" href="css/sns.css">
+<link rel="stylesheet" href="css/gallery.css">
 <script type="text/javascript" src="js/validCheck.js"></script>
 <script type="text/javascript" src="js/check.js"></script>
 <script type="text/javascript" src="js/go.js"></script>
@@ -19,7 +20,7 @@
 				<table id="siteMenuArea2">
 					<tr>
 						<td align="center"><a href="SNSController">SNS</a></td>
-						<td align="center"><a href="">?</a></td>
+						<td align="center"><a href="GalleryController">Gallery</a></td>
 					</tr>
 				</table>
 			</td>

@@ -17,7 +17,6 @@ public class SNSDAO {
 	private ArrayList<SNSMsg> snsMsgs;
 	private int allMsgCount;
 	
-
 	private static final SNSDAO SDAO = new SNSDAO();
 
 	private SNSDAO() {
@@ -36,7 +35,7 @@ public class SNSDAO {
 		this.allMsgCount = allMsgCount;
 	}
 	
-	public void whiteSNS(HttpServletRequest request, HttpServletResponse response) {
+	public void writeSNS(HttpServletRequest request, HttpServletResponse response) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 
@@ -369,4 +368,75 @@ public class SNSDAO {
 		}
 	}
 	
+	public void replySNS(HttpServletRequest request, HttpServletResponse response) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			con = DBManager.connect();
+
+			Member m = (Member) request.getSession().getAttribute("m");
+
+			// 현재 요청 시간
+			String token = request.getParameter("token");
+			// 이전 글쓰기 성공한 요청 시간
+			String successToken = (String) request.getSession().getAttribute("successToken");
+			int snsNo = Integer.parseInt(request.getParameter("snsNo"));
+			String id = m.getId();
+			String photo = m.getPhoto();
+			String reply = request.getParameter("reply");
+
+			if (successToken == null || !token.equals(successToken)) {
+				
+				String sql = "insert into jun12_reply values(jun12_reply_seq.nextval, ?, ?, ?, ?, sysdate)";
+				
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, snsNo);
+				pstmt.setString(2, id);
+				pstmt.setString(3, photo);
+				pstmt.setString(4, reply);
+			}
+
+			if (pstmt.executeUpdate() == 1) {
+				request.setAttribute("result", "댓글 성공");
+				request.getSession().setAttribute("successToken", token);
+			} else {
+				request.setAttribute("result", "댓글 실패");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+	
+	public void getSnsReply(int snsNo, HttpServletRequest request, HttpServletResponse response) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+//			con = DBManager.connect();
+//			String sql = "select * from jun12_reply where r_snsNo=?";
+//			
+//			pstmt = con.prepareStatement(sql);
+//			pstmt.setInt(1, snsNo);
+//			rs = pstmt.executeQuery();
+//
+//			ArrayList<SNSReply> SNSReplies = new ArrayList<SNSReply>();
+//			SNSReply r = null;
+//			String msg = "";
+//			while(rs.next()) {
+//				msg = rs.getString("r_reply").replaceAll("\r\n", "<br>");
+//				r = new SNSReply(rs.getInt("r_no"), snsNo, rs.getString("r_id"), rs.getString("r_photo"),
+//						rs.getString("r_reply"), rs.getString("re_date"));
+//				SNSReplies.add(r);
+//			}
+//			request.setAttribute("replies", SNSReplies);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}
 }

@@ -29,7 +29,7 @@
 	margin-top: 3px;
 	border: black solid 1px;
 }
-#snsMsgTable textarea{
+#msg{
 	width: 800px;
 	height: 100px;
 	padding: 7px;
@@ -50,4 +50,18 @@
 	color: whitegray;
 	font-size: 11pt;
 	
+}
+.snsReply input{
+	border:none;
+	border-bottom:#1976D2 solid 2px;
+	font-size: 10pt;
+	background-color: transparent;
+	width: 600px;
+	height: 15px;
+}
+.snsReply button{
+	border:none;
+	font-size: 10pt;
+	background-color: transparent;
+	color:#1976D2;
 }

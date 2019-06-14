@@ -10,42 +10,39 @@ import javax.servlet.http.HttpServletResponse;
 import com.lee.jsp.member.MemberDAO;
 
 /**
- * Servlet implementation class WriteController
+ * Servlet implementation class ReplyController
  */
-@WebServlet("/WriteController")
-public class WriteController extends HttpServlet {
+@WebServlet("/ReplyController")
+public class ReplyController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ReplyController() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public WriteController() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int p = Integer.parseInt(request.getParameter("p"));
 		if (MemberDAO.getMdao().loginCheck(request, response)) {
 			SNSDAO.getSdao().clearSearch(request, response);
 			SNSDAO.getSdao().makeToken(request, response);
-			SNSDAO.getSdao().writeSNS(request, response);
-//			SNSDAO.getSdao().getAllSNSMsg(request, response);
-//			SNSDAO.getSdao().paging(1, request, response);
-			SNSDAO.getSdao().getSNSMsg(1, request, response);
+			SNSDAO.getSdao().replySNS(request, response);
+			SNSDAO.getSdao().getSNSMsg(p, request, response);
 		}
 		request.setAttribute("contentPage", "sns/sns.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)	throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

@@ -91,3 +91,14 @@ function memberUpdateCheck() {
 function snsWriteCheck(){
 	
 }
+
+function replyWriteCheck(curForm){
+	var replyInput = curForm.reply;
+	
+	if (isEmpty(replyInput)) {
+		alert("?");
+		idInput.focus();
+		idInput.value = "";
+		return false;
+	}
+}

@@ -12,7 +12,6 @@ create table jun10_sns(
 	s_no number(10) primary key,
 	s_id varchar2(10 char) not null,
 	s_msg varchar2(100 char) not null,	
-	s_date date not null
 	constraint sns_writer
 	foreign key(s_id) references jun05_member(m_id) on delete cascade
 );
@@ -69,8 +68,49 @@ where s_id like '%%' or s_msg like '%%'
 
 ------------------------------------------------------------------------------------
 
+--댓글 테이블
+--댓글 번호, 글번호, 쓴사람ID, 쓴사람 사진, 댓글 내용, 날짜
+--댓글을 단 사람이 탈퇴를 하거나, 댓글을 단 글이 지워지면 자동으로 지워지게 외래키를 걸어둔다.
+create sequence jun12_reply_seq;
+
+create table jun12_reply(
+	r_no number(20) primary key,
+	r_snsNo number(10) not null,
+	r_id varchar2(10 char) not null,
+	r_photo varchar2(150 char) not null,
+	r_reply varchar2(150 char) not null,
+	r_date date not null
+);
+
+alter table jun12_reply
+add constraint reply_writer
+	foreign key(r_id) references jun05_member(m_id) on delete cascade;
+
+alter table jun12_reply
+add constraint reply_snsNo
+	foreign key(r_snsNo) references jun10_sns(s_no) on delete cascade;
+	
+	
+-----------------------------------------------------------------------------------------
+create sequence jun14_gallery_seq;
+	
+create table jun14_gallery(
+	g_no number(20) primary key,
+	g_title varchar2(20 char) not null,
+	g_id varchar2(20 char) not null,
+	g_file varchar2(150 char) not null,
+	g_date date,
+	constraint gallery_wirter foreign key(g_id) references jun05_member(m_id) on delete cascade
+);
+	
+	
 
 
-
-
-
+select *
+from(select rownum as rn, g_no, g_title, g_id, g_date, g_file
+from(select * from jun14_gallery order by g_date))
+where rn >= 3 and rn <= 5
+order by rn desc;
+	
+	
+	

@@ -1,0 +1,159 @@
+@charset "EUC-KR";
+
+#galleryTable{
+	margin-left: auto;
+	margin-right: auto;
+	border: black solid 3px;
+	height: 500px;
+	width: 880px;
+}
+
+#fileTable{
+	float: left;
+	border: black solid 1px;
+	margin: 2px;
+}
+
+#fileTable td{
+	width: 100px;
+	border: gray solid 1px;
+}
+
+#fileTable img{
+	height: 90px;
+}
+
+#fileTable button{
+    border: none;
+    background-color: gray;
+    color: white;
+    font-size: 12pt;
+}
+
+#galleryUploadTable{
+	margin-left: auto;
+	margin-right: auto;
+	width:530px;
+	background-color: #FFFFFFCC;
+}
+
+#galleryUploadTable td{
+	border:skyblue solid 3px;
+	padding: 7px;	
+}
+
+.anImage{
+	float: left;
+	background-color: white;
+	box-shadow: 2px 2px 2px black;
+	margin: 10px;
+}
+.anImage img{
+	max-width: 180px;
+	cursor: pointer;
+}
+.anImgOwner{
+	color:#6D4C41;
+	padding-right: 5px;
+}
+
+#galleryUploadTableArea{
+	position: fixed;
+	left:0px;
+	bottom: 5px;
+	width:100%;
+}
+
+#gutTitle{
+	border:none;
+	width: 400px;
+	font-size: 13pt;
+	background-color:transparent;
+}
+#gutTitle::placeholder{
+	color:#6D4C41;
+}
+#gutFile{
+	font-size: 13pt;
+	color:#6D4C41;
+}
+#galleryUploadTable button{
+	border:none;
+	background-color:transparent;
+	color:#6D4C41;
+	font-size: 13pt;
+}
+
+#gallerySearchTable{
+	width:530px;
+	border:#BCAAA4 solid 3px;
+	background-color: #FFFFFFCC;
+}
+#gallerySearchTable td{
+	padding: 7px;	
+}
+#gallerySearchTable input{
+	border:none;
+	background-color:transparent;
+	font-size: 13pt;
+}
+#gallerySearchTable input::placeholder{
+	color:#A1887F;
+}
+#gallerySearchTable button{
+	border:none;
+	background-color:transparent;
+	color:#A1887F;
+	font-size: 13pt;
+}
+#galleryDetailTable{
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
+	font-size: 13pt;
+	background-color: #6D4C41;
+	color:white;
+	border-spacing: 2px;
+}
+#galleryDetailTable img{
+	max-width: 95%;
+}
+#galleryDetailTable td{
+	height: 30px;
+}
+#galleryDetailTable .td2{
+	background-color: white;
+	color:black;
+	padding-left: 10px;
+}
+#galleryDetailTable .td3{
+	background-color: white;
+	color:black;
+	padding-left: 20px;
+}
+#galleryDeleteButton{
+	border:none;
+	background-color: transparent;
+	color:white;
+	width: 90%;
+	font-size: 15pt;
+}
+.gr{
+	margin-left: 10px;
+	margin-top:1px;
+	margin-bottom:1px;
+	color:black;
+}
+.galleryReplyOwner{
+	color:#6D4C41;
+}
+.galleryReplyInput{
+	border:none;
+	border-bottom:#6D4C41 solid 2px;
+	width: 300px;
+}
+.galleryReplyButton{
+	border:none;
+	background-color: transparent;
+	color:#6D4C41;
+}

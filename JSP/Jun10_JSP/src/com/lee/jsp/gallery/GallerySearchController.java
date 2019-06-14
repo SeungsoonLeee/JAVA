@@ -1,4 +1,4 @@
-package com.lee.jsp.home;
+package com.lee.jsp.gallery;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,34 +7,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lee.jsp.gallery.Gallery;
-import com.lee.jsp.gallery.GalleryDAO;
-import com.lee.jsp.member.MemberDAO;
-import com.lee.jsp.sns.SNSDAO;
-
 /**
- * Servlet implementation class HomeComtroller
+ * Servlet implementation class GallerySearchController
  */
-@WebServlet("/HomeController")
-public class HomeController extends HttpServlet {
+@WebServlet("/GallerySearchController")
+public class GallerySearchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HomeController() {
+    public GallerySearchController() {
         super();
-        SNSDAO.getSdao().calAllMsgCount();
-        GalleryDAO.getGDAO().calAllFileCount();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MemberDAO.getMdao().loginCheck(request, response);
-		request.setAttribute("contentPage", "home.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**

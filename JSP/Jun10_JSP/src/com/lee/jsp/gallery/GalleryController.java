@@ -1,4 +1,4 @@
-package com.lee.jsp.home;
+package com.lee.jsp.gallery;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,25 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lee.jsp.gallery.Gallery;
-import com.lee.jsp.gallery.GalleryDAO;
 import com.lee.jsp.member.MemberDAO;
-import com.lee.jsp.sns.SNSDAO;
 
 /**
- * Servlet implementation class HomeComtroller
+ * Servlet implementation class GalleryController
  */
-@WebServlet("/HomeController")
-public class HomeController extends HttpServlet {
+@WebServlet("/GalleryController")
+public class GalleryController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HomeController() {
+    public GalleryController() {
         super();
-        SNSDAO.getSdao().calAllMsgCount();
-        GalleryDAO.getGDAO().calAllFileCount();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -33,7 +29,9 @@ public class HomeController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MemberDAO.getMdao().loginCheck(request, response);
-		request.setAttribute("contentPage", "home.jsp");
+		GalleryDAO.getGDAO().makeToken(request, response);
+		GalleryDAO.getGDAO().getGallery(1, request, response);
+		request.setAttribute("contentPage", "gallery/gallery.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 

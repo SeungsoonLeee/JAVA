@@ -43,6 +43,23 @@
 						<tr>
 							<td colspan="2" class="snsMsg">${s.msg }</td>
 						</tr>
+						<tr>
+							<td colspan="2" class="snsReply">
+								<c:forEach var="r" items="${replies }">
+									<span>${r.id }</span> ${r.reply } (${r.date })
+								</c:forEach>
+								
+								<c:if test="${sessionScope.m != null }">
+									<form action="ReplyController" name="replyForm" onsubmit="return replyWriteCheck(this);">
+										<input name="snsNo" value="${s.no }" type="hidden">
+										<input name="p" value="${curPage }" type="hidden">
+										${sessionScope.m.id }
+										<input name="reply" autocomplete="off" maxlength="150" placeholder="´ñ±Û ÀÔ·Â">
+										<button>´ñ±Û´Þ±â</button>
+									</form>
+								</c:if>
+							</td>
+						</tr>
 						<c:if test="${s.id == sessionScope.m.id }">
 							<tr>
 								<td colspan="2" align="right">

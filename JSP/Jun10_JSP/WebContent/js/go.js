@@ -43,3 +43,12 @@ function updateMsgJS(no, msg, p){
 		}
 	}
 }
+function goGalleryDetail(no, page){
+	location.href = "GalleryDetailController?no=" + no + "&p=" + page;
+}
+function fileDelete(no, file, page){
+	var ok = confirm("삭제?");
+	if (ok) {
+		location.href = "GalleryDeleteController?no=" + no + "&file=" + file + "&p=" + page;
+	}
+}

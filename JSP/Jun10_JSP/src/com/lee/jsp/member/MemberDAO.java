@@ -7,11 +7,13 @@ import java.net.URLEncoder;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.lee.jsp.gallery.GalleryDAO;
 import com.lee.jsp.home.DBManager;
 import com.lee.jsp.sns.SNSDAO;
 import com.oreilly.servlet.MultipartRequest;
@@ -226,6 +228,34 @@ public class MemberDAO {
 		
 		return -1;
 	}
+
+	private ArrayList<String> getMemberFile(String id) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			con = DBManager.connect();
+			
+			String sql = "select g_file from jun14_gallery where g_id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+
+			ArrayList<String> files = new ArrayList<String>();
+			
+			while(rs.next()) {
+				files.add(rs.getString("g_file"));
+			}
+			
+			return files;
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(con, pstmt, rs);
+		}
+		return null;
+	}
 	
 	public void secession(HttpServletRequest request, HttpServletResponse response) {
 		Connection con = null;
@@ -241,20 +271,34 @@ public class MemberDAO {
 			String sql = "delete from jun05_member where m_id=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, m.getId());
-
+			
+			ArrayList<String> files = getMemberFile(m.getId());
+			int deleteFileCount = files.size();
+			
 			if (pstmt.executeUpdate() == 1) {
 				request.setAttribute("result", "탈퇴 성공");
 				
 				// 사진 삭제 작업
 				String m_photo = URLDecoder.decode(m.getPhoto(), "euc-kr");
-				String path = request.getSession().getServletContext().getContextPath();
+				String path = request.getSession().getServletContext().getRealPath("img");
 				new File(path + "/" + m_photo).delete();
-				System.out.println(path);
-
+				
 				//탈퇴한 사람이 쓴 글의 수를 체크하여 빼주어야 함.
 				int allMsgCount = SNSDAO.getSdao().getAllMsgCount();
 				if(allMsgCount >= 0) {
 					SNSDAO.getSdao().setAllMsgCount(allMsgCount - deleteMsgCount);
+				}
+				
+				//탈퇴한 사람이 쓴 갤러리 파일들 살제
+				path = request.getSession().getServletContext().getRealPath("file");
+				for( String f : files) {
+					new File(path + "/" + f).delete();
+				}
+				
+				//탈퇴한 사람이 쓴 갤러리 수를 체크하여 빼주어야 함.
+				int allFileCount = GalleryDAO.getGDAO().getAllFileCount();
+				if(allMsgCount >= 0) {
+					SNSDAO.getSdao().setAllMsgCount(allFileCount - deleteFileCount);
 				}
 				
 			} else {
